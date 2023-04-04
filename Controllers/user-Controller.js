@@ -36,3 +36,24 @@ export const saveUser =async(req, res) =>{
         res.status(400).json({message : error.message})
     }
 }
+
+// update a user
+
+export const updateUserById = async(req, res) =>{
+    try {
+        const updatedUser = await User.updateOne({_id:req.params.id}, {$set : req.body});
+   
+        res.json(updatedUser) 
+    } catch (error) {
+        res.status(400).json({message : error.message})
+    }
+}
+
+export const deleteUser = async (req, res) =>{
+    try {
+        const deleteUser = await User.deleteOne({_id:req.params.id})
+        res.status(200).json(deleteUser)
+    } catch (error) {
+        res.status(400).json({message: error.message})
+    }
+}
