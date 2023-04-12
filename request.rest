@@ -1,9 +1,6 @@
 
-
-
 ###Get all Users
 GET http://localhost:8800/users
-
 
 
 
@@ -12,12 +9,16 @@ POST  http://localhost:8800/users
 Content-Type: application/json
 
 {
-    "name": "raziq",
-    "lastName": "adeel",
-    "email": "raziq@tester.com",
+    "name": "Tester",
+    "lastName": "raziq",
+    "email": "raziqTester@tester.com",
     "password" : "00000",
     "role": "Admin"
 }
+
+
+
+
 
 ###
 ### get User By Id
@@ -33,8 +34,18 @@ Content-Type: application/json
     "name": "thomas",
     "lastName": "we dont know"
 }
-
 ####
 ##Delete User
 
 DELETE http://localhost:8800/users/64243f3f2bdb533bd1bcb3b2
+
+#######
+## Login
+
+POST http://localhost:8800/login
+Content-Type: application/json
+
+{
+    "email": "raziq@tester.com",
+    "password" : "00000",
+}

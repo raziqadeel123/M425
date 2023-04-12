@@ -1,7 +1,11 @@
+/***  Imports  ***/
 import mongoose from 'mongoose';
+
+/***  DECLARATION AND INITIALIZATION ***/
 
 const Schema = mongoose.Schema;
 
+/** Function to Create the Schema  **/
 const studentSchem = new Schema(
   {
     name: { type: String, required: true },
@@ -12,5 +16,7 @@ const studentSchem = new Schema(
   },
   { timestamps: true }
 );
+
+/***  Exports ***/
 
 export default mongoose.model('User', studentSchem, 'users');
